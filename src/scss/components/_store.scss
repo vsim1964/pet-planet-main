@@ -1,0 +1,66 @@
+@use "../variables" as *;
+
+.store {
+	padding-top: 120px;
+	padding-bottom: 120px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 40px;
+	}
+
+	&__categories {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__category-button {
+		color: $carrot;
+		padding-bottom: 10px;
+		position: relative;
+
+
+		&-active {
+			color: $green;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background-color: $green;
+			transform: scaleX(0);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		&-active::after {
+			transform: scaleX(1);
+		}
+
+	}
+
+}
+
+
+
+// .store__title {}
+
+// .store__list {}
+
+// .store__item {}
+
+// .store__product {}
+
+// .product {}
+
+// .product__image {}
+
+// .product__title {}
+
+// .product__price {}
+
+// .product__btn-add-cart {}
