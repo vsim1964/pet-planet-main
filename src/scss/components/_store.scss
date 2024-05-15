@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .store {
 	padding-top: 120px;
@@ -6,6 +7,7 @@
 
 	&__header {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		padding-bottom: 40px;
 	}
@@ -40,27 +42,58 @@
 		&-active::after {
 			transform: scaleX(1);
 		}
+	}
+
+	&__cart-button {
+		position: relative;
+		display: block;
+		width: 28px;
+		height: 28px;
+	}
+
+	&__cart-cnt {
+		position: relative;
+		z-index: 2;
+		color: $light;
+		font-weight: 700;
+		font-size: 12px;
+		text-align: center;
 
 	}
 
+	&__cart-icon {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-style: 52px;
+		color: $green;
+		margin-bottom: 32px;
+
+		@include tablet {
+			font-style: 24px;
+		}
+
+		@include mobile {
+			font-style: 20px;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 420px);
+		justify-content: center;
+		gap: 20px;
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		display: flex;
+	}
 }
-
-
-
-// .store__title {}
-
-// .store__list {}
-
-// .store__item {}
-
-// .store__product {}
-
-// .product {}
-
-// .product__image {}
-
-// .product__title {}
-
-// .product__price {}
-
-// .product__btn-add-cart {}
